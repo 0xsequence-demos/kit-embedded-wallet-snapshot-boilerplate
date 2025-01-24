@@ -1,18 +1,5 @@
-import {
-  mainnet,
-  polygon,
-  Chain,
-  polygonAmoy,
-  arbitrumSepolia,
-  immutableZkEvmTestnet,
-} from "wagmi/chains";
+import { mainnet, Chain, arbitrum } from "wagmi/chains";
 
-const chains = [
-  mainnet,
-  polygon,
-  polygonAmoy,
-  arbitrumSepolia,
-  immutableZkEvmTestnet,
-] as [Chain, ...Chain[]];
+const chains = [mainnet, arbitrum] as [Chain, ...Chain[]];
 
 export default chains;

@@ -1,0 +1,16 @@
+name = "sequence-snapshot"
+compatibility_date = "2024-03-25"
+pages_build_output_dir = "./dist"
+[vars]
+
+kv_namespaces = [
+    { binding = "sdc_redeem_timers", id = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa" }
+]
+
+BUILDER_PROJECT_ACCESS_KEY="AQAAAAAAAKD0thGRWyQ1qA4y857JdoKLNs4"
+CHAIN_HANDLE="arbitrum"
+COIN_CONTRACT_ADDRESS="0x432871abc5b88c0f7816ba3ec664e151c7c3d044"
+PKEY="0x0000000000000000000000000000000000000000000000000000000000000000"
+
+[dev]
+port = 4444

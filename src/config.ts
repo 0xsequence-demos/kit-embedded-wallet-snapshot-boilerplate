@@ -11,9 +11,9 @@ const walletConnectId = import.meta.env.VITE_WALLET_CONNECT_ID;
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const config: any = createConfig("waas", {
   projectAccessKey: projectAccessKey,
-  chainIds: [1, 421614, 13473],
-  defaultChainId: 421614,
-  appName: "Kit Starter",
+  chainIds: [1], //snapshot votes must be signed on ethereum mainnet foir this example
+  defaultChainId: 1,
+  appName: "Sequence + Snapshot",
   waasConfigKey: waasConfigKey,
   googleClientId: googleClientId,
   appleClientId: appleClientId,

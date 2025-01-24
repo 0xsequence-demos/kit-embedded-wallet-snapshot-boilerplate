@@ -12,3 +12,15 @@
     @apply grid grid-cols-1 grid-rows-1;
   }
 }
+
+
+@keyframes fadeAnimation {
+  0%   { opacity:40%; }
+  50%  { opacity:60%; }
+  100% { opacity:40%; }
+}
+
+.animated-fade {
+  opacity:1;  
+  animation: fadeAnimation 0.75s infinite;
+}

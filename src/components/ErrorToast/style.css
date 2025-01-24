@@ -1,0 +1,28 @@
+.error-toast {
+  position:absolute;
+  top:27px;
+  width:calc(100vw - 40px);
+  border-radius: 24px;
+  margin: 20px;
+  background-color: #bf00007f;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  height:fit-content;
+  z-index: 100;
+  padding: 10px 50px 10px 10px;
+  min-height: 48px;
+}
+
+.error-toast .close-btn{
+  position:absolute;
+  background-color: #000000;
+  margin: 4px;
+  width:40px;
+  height:40px;
+  top:0px;
+  right:0px;
+  border-radius: 40px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
