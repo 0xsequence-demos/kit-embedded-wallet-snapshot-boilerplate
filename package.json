@@ -23,7 +23,7 @@
     "@0xsequence/kit": "^4.3.0",
     "@0xsequence/network": "^2.1.0",
     "@apollo/client": "^3.12.7",
-    "@snapshot-labs/snapshot.js": "^0.12.42",
+    "@snapshot-labs/snapshot.js": "github:0xsequence-demos/snapshot.js#8c5c31edcf401368e59f9243d7d12ce950a52d9e",
     "@tanstack/react-query": "^5.64.2",
     "boilerplate-design-system": "github:0xsequence-demos/boilerplate-design-system#08dfb9404fdaaa7fa80d55522f6552af4e811cd2",
     "ethers": "6.13.5",
@@ -33,7 +33,7 @@
     "sonner": "^1.7.1",
     "viem": "^2.22.12",
     "wagmi": "^2.12.16",
-    "wrangler": "^3.91.0",
+    "wrangler": "^3.105.1",
     "zod": "^3.24.1"
   },
   "devDependencies": {
