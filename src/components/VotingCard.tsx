@@ -44,10 +44,14 @@ function VotingCard(props: {
       });
     }
   };
-  const total = proposal.scores.reduce((pv, cv) => pv + cv);
-  const percents = proposal.scores.map((s) =>
-    total > 0 ? (s / total) * 100 : 0,
-  );
+  const total =
+    proposal.scores.length === 0
+      ? 1
+      : proposal.scores.reduce((pv, cv) => pv + cv);
+  const percents =
+    proposal.scores.length === 0
+      ? proposal.choices.map(() => 0)
+      : proposal.scores.map((s) => (total > 0 ? (s / total) * 100 : 0));
   const winnerIndex =
     total > 0
       ? percents.indexOf(percents.reduce((pv, cv) => Math.max(pv, cv)))
