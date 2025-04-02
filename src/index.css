@@ -1,6 +1,8 @@
 @import "tailwindcss";
+@import '@0xsequence/design-system/preset';
 @import "boilerplate-design-system/styles/index.css";
 @source "../node_modules/boilerplate-design-system";
+
 
 @layer utilities {
   [data-visible] {

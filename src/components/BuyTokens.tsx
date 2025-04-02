@@ -190,9 +190,7 @@ const BuyTokens = () => {
           disabled={isEncoding || isRedeeming}
         >
           {isEncoding || isRedeeming ? (
-            <>
-              ONE MOMENT PLEASE <Spinner />
-            </>
+            <Spinner />
           ) : authErrorMessage ? (
             authErrorMessage
           ) : (
