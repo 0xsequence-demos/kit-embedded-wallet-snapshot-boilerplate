@@ -1,8 +1,12 @@
-import { SequenceKit } from "@0xsequence/kit";
-import { config } from "./config";
-import "@0xsequence/design-system/styles.css";
+import { SequenceConnectProvider } from "@0xsequence/connect";
+import { config, kitConfig } from "./config";
 
-import { useAccount, useDisconnect, useSwitchChain } from "wagmi";
+import {
+  useAccount,
+  useDisconnect,
+  useSwitchChain,
+  WagmiProvider,
+} from "wagmi";
 import { NotConnected } from "./views/NotConnected";
 import { Connected } from "./views/Connected";
 import { Button, Group, SequenceBoilerplate } from "boilerplate-design-system";
@@ -11,14 +15,21 @@ import { useEffect, useState } from "react";
 import { vote } from "./vote";
 import VotingCard from "./components/VotingCard";
 import { AdjustedProposal } from "./utils/types";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
 const spaceName = import.meta.env.VITE_SNAPSHOT_SPACE_NAME;
 
+const queryClient = new QueryClient();
+
 export default function Layout() {
   return (
-    <SequenceKit config={config}>
-      <App />
-    </SequenceKit>
+    <WagmiProvider config={config}>
+      <QueryClientProvider client={queryClient}>
+        <SequenceConnectProvider config={kitConfig}>
+          <App />
+        </SequenceConnectProvider>
+      </QueryClientProvider>
+    </WagmiProvider>
   );
 }
 

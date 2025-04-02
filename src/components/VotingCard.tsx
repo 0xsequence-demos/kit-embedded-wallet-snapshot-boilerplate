@@ -1,4 +1,4 @@
-import { walletClientToSigner } from "@0xsequence/kit";
+import { walletClientToSigner } from "@0xsequence/connect";
 import { Card, Button } from "boilerplate-design-system";
 import { Dispatch, SetStateAction, useState } from "react";
 import {

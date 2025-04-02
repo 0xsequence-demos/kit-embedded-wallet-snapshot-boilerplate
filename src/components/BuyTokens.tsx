@@ -1,4 +1,4 @@
-import { Box, Spinner } from "@0xsequence/design-system";
+import { Card, Spinner } from "@0xsequence/design-system";
 import { SequenceIndexer, TokenBalance } from "@0xsequence/indexer";
 import { useQuery } from "@tanstack/react-query";
 import { useEffect, useState } from "react";
@@ -122,7 +122,7 @@ const BuyTokens = () => {
 
   return (
     <>
-      <Box
+      <Card
         display="flex"
         flexDirection="row"
         gap="8"
@@ -190,14 +190,16 @@ const BuyTokens = () => {
           disabled={isEncoding || isRedeeming}
         >
           {isEncoding || isRedeeming ? (
-            <Spinner />
+            <>
+              ONE MOMENT PLEASE <Spinner />
+            </>
           ) : authErrorMessage ? (
             authErrorMessage
           ) : (
             `REDEEM DAILY ${remainingSeconds === 0 ? "NOW" : `IN ${formatTime(remainingSeconds)}`}`
           )}
         </Button>
-      </Box>
+      </Card>
     </>
   );
 };
