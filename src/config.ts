@@ -1,4 +1,6 @@
-import { createConfig } from "@0xsequence/kit";
+import { getDefaultWaasConnectors } from "@0xsequence/connect";
+import { mainnet } from "viem/chains";
+import { createConfig, http } from "wagmi";
 
 // Get your own keys on sequence.build
 const projectAccessKey = import.meta.env.VITE_PROJECT_ACCESS_KEY;
@@ -8,15 +10,29 @@ const appleClientId = import.meta.env.VITE_APPLE_CLIENT_ID;
 const appleRedirectURI = window.location.origin + window.location.pathname;
 const walletConnectId = import.meta.env.VITE_WALLET_CONNECT_ID;
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-export const config: any = createConfig("waas", {
-  projectAccessKey: projectAccessKey,
-  chainIds: [1], //snapshot votes must be signed on ethereum mainnet foir this example
-  defaultChainId: 1,
-  appName: "Sequence + Snapshot",
-  waasConfigKey: waasConfigKey,
-  googleClientId: googleClientId,
-  appleClientId: appleClientId,
-  appleRedirectURI: appleRedirectURI,
+const connectors = getDefaultWaasConnectors({
   walletConnectProjectId: walletConnectId,
+  waasConfigKey,
+  googleClientId,
+  // Notice: Apple Login only works if deployed on https (to support Apple redirects)
+  appleClientId,
+  appleRedirectURI,
+  /* Arbitrum sepolia chainId */
+  defaultChainId: 1,
+  appName: "Kit Starter",
+  projectAccessKey,
 });
+
+const transports = {
+  1: http(),
+};
+
+export const config = createConfig({
+  transports,
+  connectors,
+  chains: [mainnet],
+});
+
+export const kitConfig = {
+  projectAccessKey,
+};
